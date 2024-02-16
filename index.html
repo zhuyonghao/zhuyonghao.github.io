@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to my blog</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Personal Blog" name="keywords">
+    <meta content="Personal Blog" name="description">
+
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Favicon图标 -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts google字体库 -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 图标库-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet 调用css-->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
+                <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="img/profile.jpg"
+                    alt="Image">
+                <h1 class="font-weight-bold">朱永浩</h1>
+                <p class="mb-4">
+                    Success is a collection of problems solved. 成功是已解决问题的积累。
+                </p>
+                <div class="d-flex justify-content-center mb-5">
+                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-qq"></i></a>
+                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-weixin"></i></a>
+                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-google"></i></a>
+                </div>
+                <a href="" class="btn btn-lg btn-block btn-primary mt-auto">Hello World</a>
+            </div>
+            <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+                <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+            </div>
+        </div>
+        <div class="content">
+            <!-- Navbar Start -->
+            <div class="container p-0">
+                <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                    <a href="" class="navbar-brand d-block d-lg-none">Navigation</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav m-auto">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Navbar End -->
+
+            <!-- Carousel Start -->
+            <div class="container p-0">
+                <div id="blog-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <h2 class="mb-3 text-white font-weight-bold">第一个博客</h2>
+                                <div class="d-flex text-white">
+                                    <small class="mr-2"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                                    <small class="mr-2"><i class="fa fa-folder"></i> c++</small>
+                                </div>
+                                <a href="1.md" class="btn btn-lg btn-outline-light mt-4">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <h2 class="text-white font-weight-bold">第二个博客</h2>
+                                <div class="d-flex">
+                                    <small class="mr-2"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                                    <small class="mr-2"><i class="fa fa-folder"></i> linux</small>
+                                </div>
+                                <a href="2.md" class="btn btn-lg btn-outline-light mt-4">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100" src="img/carousel-3.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <h2 class="text-white font-weight-bold">第三个博客</h2>
+                                <div class="d-flex">
+                                    <small class="mr-2"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                                    <small class="mr-2"><i class="fa fa-folder"></i> algorithm</small>
+                                </div>
+                                <a href="3.md" class="btn btn-lg btn-outline-light mt-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Carousel End -->
+
+
+            <!-- Blog List Start -->
+            <div class="container bg-white pt-5">
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-1.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第一个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> c++</small>
+                        </div>
+                        <p>
+                            这是第一个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="1.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-2.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第二个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> linux</small>
+                        </div>
+                        <p>
+                            这是第二个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="2.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-3.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第三个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> algorithm</small>
+                        </div>
+                        <p>
+                            这是第三个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="3.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog List End -->
+
+
+            <!-- quote Start -->
+            <div class="container py-5 px-4 bg-secondary text-center">
+                <h1 class="text-white font-weight-bold">Talk is cheap. Show me the code</h1>
+                <p class="text-white">Linus Torvalds</p>
+            </div>
+            <!-- quote End -->
+
+
+            <!-- Blog List Start -->
+            <div class="container bg-white pt-5">
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-4.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第四个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
+                        </div>
+                        <p>
+                            这是第四个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="4.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-5.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第五个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> techology</small>
+                        </div>
+                        <p>
+                            这是第五个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="5.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="row blog-item px-3 pb-5">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/blog-6.jpg" alt="Image">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第六个博客</h3>
+                        <div class="d-flex mb-3">
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i>other</small>
+                        </div>
+                        <p>
+                            这是第六个博客
+                        </p>
+                        <a class="btn btn-link p-0" href="6.md">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog List End -->
+
+
+            <!-- Footer Start -->
+            <div class="container py-4 bg-secondary text-center">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold" href="#">Nice to meet you</a>
+                </p>
+            </div>
+            <!-- Footer End -->
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
