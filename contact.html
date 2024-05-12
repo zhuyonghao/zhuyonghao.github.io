@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -21,24 +20,112 @@
 
     <!-- Customized Bootstrap Stylesheet 调用css-->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* 播放器样式 */
+        .audio-player {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* 播放按钮样式 */
+        .play-button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 旋转动画 */
+        .rotate {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 进度条样式 */
+        .progress-bar {
+            background-color: #ccc;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* 已播放部分样式 */
+        .progress {
+            background-color: #007bff;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* 圆形图片样式 */
+        #image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: auto;
+            /* 居中显示 */
+            display: block;
+            /* 将图片显示为块级元素 */
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="wrapper">
         <div class="sidebar">
             <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-                <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="img/profile.jpg"
-                    alt="Image">
+                <img src="img/profile.jpg" id="image">
                 <h1 class="font-weight-bold">朱永浩</h1>
                 <p class="mb-4">
                     Success is a collection of problems solved. 成功是已解决问题的积累。
                 </p>
-                <div class="d-flex justify-content-center mb-5">
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-qq"></i></a>
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-weixin"></i></a>
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-google"></i></a>
+                <div class="audio-player">
+                    <div class="play-button" id="play-button">Play</div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress" style="width: 0%;"></div>
+                    </div>
+                    <audio id="audio" src="music/music.mp3"></audio>
                 </div>
-                <a href="" class="btn btn-lg btn-block btn-primary mt-auto">Hello World</a>
+
+
+                <script>
+                    var audio = document.getElementById("audio");
+                    var playButton = document.getElementById("play-button");
+                    var progress = document.getElementById("progress");
+                    var image = document.getElementById("image");
+
+                    playButton.addEventListener("click", function () {
+                        if (audio.paused) {
+                            audio.play();
+                            playButton.innerHTML = "Pause";
+                            image.classList.add("rotate");
+                        } else {
+                            audio.pause();
+                            playButton.innerHTML = "Play";
+                            image.classList.remove("rotate");
+                        }
+                    });
+
+                    audio.addEventListener("timeupdate", function () {
+                        var progressPercentage = (audio.currentTime / audio.duration) * 100;
+                        progress.style.width = progressPercentage + "%";
+                    });
+                </script>
+
             </div>
             <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
                 <i class="fas fa-2x fa-angle-double-right text-primary"></i>
@@ -88,6 +175,9 @@
             <!-- Page Header End -->
 
 
+            <img class="img-fluid mb-4" src="img/contact.png" alt="Image">
+
+
             <!-- Contact Start -->
             <div class="container bg-white pt-5">
                 <div class="row px-3 pb-2">
@@ -111,10 +201,44 @@
             <!-- Contact End -->
 
 
+            <head>
+                <style>
+                    .typing-animation {
+                        overflow: hidden;
+                        /* 隐藏超出部分 */
+                        white-space: nowrap;
+                        /* 不换行 */
+                        animation: typing 4s steps(40) infinite;
+                        font-size: 24px;
+                        /* 设置字体大小 */
+                        color: rgb(23, 10, 119);
+                        /* 设置字体颜色为蓝色 */
+                        text-align: center;
+                    }
+
+                    @keyframes typing {
+                        0% {
+                            width: 0;
+                        }
+
+                        100% {
+                            width: 100%;
+                        }
+                    }
+                </style>
+            </head>
+
+            <body>
+                <div class="typing-animation">
+                    在茫茫人海中遇见有趣的灵魂
+                </div>
+            </body>
+
+
             <!-- Footer Start -->
             <div class="container py-4 bg-secondary text-center">
                 <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="#">Nice to meet you</a>
+                    Nice to meet you
                 </p>
             </div>
             <!-- Footer End -->

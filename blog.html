@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -21,24 +20,112 @@
 
     <!-- Customized Bootstrap Stylesheet 调用css-->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* 播放器样式 */
+        .audio-player {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* 播放按钮样式 */
+        .play-button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 旋转动画 */
+        .rotate {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 进度条样式 */
+        .progress-bar {
+            background-color: #ccc;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* 已播放部分样式 */
+        .progress {
+            background-color: #007bff;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* 圆形图片样式 */
+        #image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: auto;
+            /* 居中显示 */
+            display: block;
+            /* 将图片显示为块级元素 */
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="wrapper">
         <div class="sidebar">
             <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-                <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="img/profile.jpg"
-                    alt="Image">
+                <img src="img/profile.jpg" id="image">
                 <h1 class="font-weight-bold">朱永浩</h1>
                 <p class="mb-4">
                     Success is a collection of problems solved. 成功是已解决问题的积累。
                 </p>
-                <div class="d-flex justify-content-center mb-5">
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-qq"></i></a>
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-weixin"></i></a>
-                    <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-google"></i></a>
+                <div class="audio-player">
+                    <div class="play-button" id="play-button">Play</div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress" style="width: 0%;"></div>
+                    </div>
+                    <audio id="audio" src="music/music.mp3"></audio>
                 </div>
-                <a href="" class="btn btn-lg btn-block btn-primary mt-auto">Hello World</a>
+
+
+                <script>
+                    var audio = document.getElementById("audio");
+                    var playButton = document.getElementById("play-button");
+                    var progress = document.getElementById("progress");
+                    var image = document.getElementById("image");
+
+                    playButton.addEventListener("click", function () {
+                        if (audio.paused) {
+                            audio.play();
+                            playButton.innerHTML = "Pause";
+                            image.classList.add("rotate");
+                        } else {
+                            audio.pause();
+                            playButton.innerHTML = "Play";
+                            image.classList.remove("rotate");
+                        }
+                    });
+
+                    audio.addEventListener("timeupdate", function () {
+                        var progressPercentage = (audio.currentTime / audio.duration) * 100;
+                        progress.style.width = progressPercentage + "%";
+                    });
+                </script>
+
             </div>
             <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
                 <i class="fas fa-2x fa-angle-double-right text-primary"></i>
@@ -95,15 +182,16 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-1.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第一个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Boost.asio</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 20-May-2024</small>
                             <small class="mr-2 text-muted"><i class="fa fa-folder"></i> C++</small>
                         </div>
                         <p>
-                            这是第一个博客
+                            Boost.Asio是一个跨平台的C++网络编程库，它提供了一套高效、灵活的网络编程接口，可以用于开发各种网络应用程序，包括服务器、客户端、异步通信等
                         </p>
-                        <a class="btn btn-link p-0" href="1.md">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="btn btn-link p-0" href="note/boost.asio.html">Read More <i
+                                class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="row blog-item px-3 pb-5">
@@ -111,15 +199,16 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-2.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第二个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">ComputerNetwork</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
-                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Linux</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 20-May-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> ComputerNetwork</small>
                         </div>
                         <p>
-                            这是第二个博客
+                            计算机网络是指将多台计算机通过通信链路连接起来，以实现信息的传输和资源共享的系统。它是一个广泛应用于现代计算机系统的概念，包括局域网、广域网、互联网等。
                         </p>
-                        <a class="btn btn-link p-0" href="2.md">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="btn btn-link p-0" href="note/ComputerNetwork.html">Read More <i
+                                class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="row blog-item px-3 pb-5">
@@ -127,13 +216,13 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-3.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第三个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">DesignPattern</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
-                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Algorithm</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 20-May-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> C++</small>
                         </div>
                         <p>
-                            这是第三个博客
+                            设计模式是一种解决软件设计问题的经验总结，它提供了一套被广泛接受的、可重用的设计思想和解决方案。设计模式可以帮助开发人员更好地组织和管理代码，提高代码的可维护性、可扩展性和可重用性。
                         </p>
                         <a class="btn btn-link p-0" href="3.md">Read More <i class="fa fa-angle-right"></i></a>
                     </div>
@@ -143,15 +232,16 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-4.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第四个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">OperatingSystem</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
-                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 20-May-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i>OperatingSystem</small>
                         </div>
                         <p>
-                            这是第四个博客
+                            操作系统在计算机系统中起着至关重要的作用，它负责协调和管理计算机系统的各个部分，提供了一个稳定、安全和高效的运行环境，使得用户可以方便地使用计算机系统进行各种任务和应用。
                         </p>
-                        <a class="btn btn-link p-0" href="4.md">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="btn btn-link p-0" href="note/OperatingSystem.html">Read More <i
+                                class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="row blog-item px-3 pb-5">
@@ -159,15 +249,16 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-5.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第五个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Linux</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 16-Feb-2024</small>
-                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Technology</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 20-May-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-folder"></i>OperatingSystem</small>
                         </div>
                         <p>
-                            这是第五个博客
+                            Linux是一种开源的、类Unix操作系统内核。它最初由芬兰的林纳斯·托瓦兹（Linus Torvalds）在1991年开发，并在全球范围内得到了广泛的应用和支持。
                         </p>
-                        <a class="btn btn-link p-0" href="5.md">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="btn btn-link p-0" href="note/linux.html">Read More <i
+                                class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="row blog-item px-3 pb-5">
@@ -175,15 +266,16 @@
                         <img class="img-fluid mb-4 mb-md-0" src="img/blog-6.jpg" alt="Image">
                     </div>
                     <div class="col-md-7">
-                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">第六个博客</h3>
+                        <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Other</h3>
                         <div class="d-flex mb-3">
-                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i>16-Feb-2024</small>
+                            <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i>20-May-2024</small>
                             <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Other</small>
                         </div>
                         <p>
-                            这是第六个博客
+                            记录我的想法
                         </p>
-                        <a class="btn btn-link p-0" href="6.md">Read More <i class="fa fa-angle-right"></i></a>
+                        <a class="btn btn-link p-0" href="note/other.html">Read More <i
+                                class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="row px-3 pb-5">
@@ -214,7 +306,7 @@
             <!-- Footer Start -->
             <div class="container py-4 bg-secondary text-center">
                 <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="#">Nice to meet you</a>
+                    Nice to meet you
                 </p>
             </div>
             <!-- Footer End -->

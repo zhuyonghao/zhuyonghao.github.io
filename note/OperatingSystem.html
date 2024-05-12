@@ -1,0 +1,1394 @@
+<!doctype html>
+<html style='font-size:24px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+/* try fix https://github.com/typora/typora-issues/issues/5253 */
+.file-node-expanded>.file-node-children {
+    display: grid;
+  }
+
+
+</style><title>操作系统</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='第一章'><span>第一章</span></h1><h2 id='操作系统概念和功能'><span>操作系统概念和功能</span></h2><ul><li><p><span>操作系统：1、管理硬件和软件。2、提供给用户和其他软件方便的接口和环境。3、最基本系统软件</span></p></li><li><p><span>tip:执行程序前需要把程序放到内存中</span></p></li><li><p><span>处理机管理(cpu处理进程)、存储器管理(把程序放到内存)、文件管理(文件的存放位置)、设备管理(将设备分配内存)</span></p></li><li><p><span>封装：将丑陋的硬件功能封装成简单易用的服务</span></p></li><li><p><span>封装的好处：无需关心底层硬件的原理，只需要对操作系统发出命令</span></p></li><li><p><span>操作系统向上层提供服务    用户：GUI和命令接口（联机、脱机batch）</span></p></li><li><p><span>给软件使用的是程序接口(系统调用)</span></p></li></ul><h2 id='操作系统的特征'><span>操作系统的特征</span></h2><ul><li><p><span>并发：两个或多个事件在同一间隔内发生       交替发送(但看起来是同时发生)</span></p></li></ul><p><span>Tip:两个或多个事件在同一时刻同时发生</span></p><ol start='' ><li><p><span>单核CPU同一时刻只能执行一个程序，各个程序只能并发进行</span></p></li><li><p><span>多个cpu同一时刻可以同时执行多个程序，多个程序可以并行执行</span></p></li></ol><ul><li><p><span>共享：资源共享，系统中的资源可供内存中多个并发执行的进程共同使用</span></p></li></ul><ol start='' ><li><p><span>互斥共享方式：微信视频,摄像头只能分配给其中一个进程</span></p></li><li><p><span>共同共享方式：qq发送文件A,微信发送文件B，看起来同时进行访问操作，实际是交替进行访问操作</span></p></li></ol><p><span>并发和共享两个特性互相依赖</span></p><ul><li><p><span>虚拟：空分复用技术：虚拟存储器            ，虚拟处理器技术       时分复用技术      微观上处理机在各个微小的时间段内交替着为各个进程服务</span></p></li><li><p><span>异步：由于并发执行的程序会争抢着使用系统资源，而系统的资源有限，进程的执行不是一贯到底的，而是走走停停，以不可预知的速度向前推进</span></p></li></ul><h2 id='操作系统的发展与分类'><span>操作系统的发展与分类</span></h2><p><span>手工操作系统  手工输入</span></p><p><span>批处理阶段   机器输入</span></p><p><span>分时操作系统   多人共同执行</span></p><p><span>实时操作系统    解决紧急任务</span></p><p><span>网络操作系统    </span></p><p><span>分布式操作系统   任务分布在这些计算机上，由他们并行、协同完成任务</span></p><p><span>个人计算机操作系统</span></p><h2 id='操作系统的运行机制'><span>操作系统的运行机制</span></h2><p><span>二进制表示的指令就是cpu能识别、执行的最基本命令</span></p><p><span>内核程序   内核态</span></p><p><span>运行程序    用户态</span></p><h2 id='中断和异常'><span>中断和异常</span></h2><p><span>利用中断实现并发</span></p><ul><li><p><span>外中断    I/O中断请求</span></p></li></ul><p><span>program1 --- CPU遇到中断信号 --- 内核程序 --- program2 --- CPU遇到中断信号</span></p><ul><li><p><span>异常(内中断)</span></p><p><span>陷阱、陷入(trap)       故障(fault)      终止(abort)</span></p></li><li><p><span>系统调用：操作系统给应用程序使用的接口，供应用程序调用的特殊函数，应用程序可以通过系统调用来请求获得操作系统内核的服务</span></p></li></ul><p><span>库函数内部封装系统调用的复杂细节</span></p><p><strong><span>陷入指令是在用户态下执行的，执行陷入指令之后立即引发一个内中断，是CPU进入核心态，发出系统调用请求是在用户态，而对系统调用的相应处理是在核心态下进行，然后返回到用户态</span></strong></p><h2 id='操作系统体系结构'><span>操作系统体系结构</span></h2><p><span>大内核(宏内核，单内核)    linux   高性能</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223200702572.png" referrerpolicy="no-referrer" alt="image-20240223200702572"></p><p><span>微内核    windows   低性能</span></p><p><span>分层内核    </span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223195947310.png" referrerpolicy="no-referrer" alt="image-20240223195947310"></p><p><span>模板化：主模块+可加载内核模块</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223200411213.png" referrerpolicy="no-referrer" alt="image-20240223200411213"></p><p><span>外核</span></p><h2 id='操作系统引导开机'><span>操作系统引导开机</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223201656742.png" referrerpolicy="no-referrer" alt="image-20240223201656742"></p><p>&nbsp;</p><h2 id='虚拟机'><span>虚拟机</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223202559764.png" referrerpolicy="no-referrer" alt="image-20240223202559764"></p><h1 id='第二章'><span>第二章</span></h1><h2 id='进程的概念组成特征'><span>进程的概念、组成、特征</span></h2><p><span>程序：是静态的，就是个存放在磁盘里的可持续文件，就是一系列的指令集合</span></p><p><span>进程(Process)：是动态的，是程序的一次执行过程</span></p><p><span>进程（Process）是指计算机中正在运行的一个程序的实例</span></p><p><span>同一个程序多次执行会对应多个进程  操作系统通过PID(process ID)来区分各个进程</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223203836552.png" referrerpolicy="no-referrer" alt="image-20240223203836552"></p><p><span>程序是如何运行的？</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223204402481.png" referrerpolicy="no-referrer" alt="image-20240223204402481"></p><p><span>进程的特征：</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223204757755.png" referrerpolicy="no-referrer" alt="image-20240223204757755"></p><h2 id='进程的状态与转换----进程的组织'><span>进程的状态与转换    进程的组织</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223204947358.png" referrerpolicy="no-referrer" alt="image-20240223204947358"></p><p><span>创建之后进入了就绪状态    运行时提出请求，请求未接收进入阻塞态   等请求接收后进入就绪态</span></p><p><span>进程的组织形式</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223210945804.png" referrerpolicy="no-referrer" alt="image-20240223210945804"></p><h2 id='进程控制'><span>进程控制</span></h2><p><span>实现进程的状态转换</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223213237139.png" referrerpolicy="no-referrer" alt="image-20240223213237139"></p><h2 id='进程通信'><span>进程通信</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223213449422.png" referrerpolicy="no-referrer" alt="image-20240223213449422"></p><p><span>进程间通信(Inter-Process Communication)  IPC </span></p><p><span>共享存储：</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223214128007.png" referrerpolicy="no-referrer" alt="image-20240223214128007"></p><p><span>消息传递(直接通信方式)</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223214710322.png" referrerpolicy="no-referrer" alt="image-20240223214710322"></p><p><span>消息传递(间接通信方式)</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223214911021.png" referrerpolicy="no-referrer" alt="image-20240223214911021"></p><p><span>管道通信</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223215050650.png" referrerpolicy="no-referrer" alt="image-20240223215050650"></p><h2 id='线程的概念'><span>线程的概念</span></h2><p><span>一个进程可以包含一个或多个线程</span></p><p><span>不同进程中的线程变化，会引起进程切换，系统开销大</span></p><p><span>切换同进程内的线程，不会引起进程变换，系统开销小</span></p><h2 id='线程的实现方式和多线程模型'><span>线程的实现方式和多线程模型</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222312312.png" referrerpolicy="no-referrer" alt="image-20240223222312312"></p><p><span>用户级线程    无法实现高并发</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222332598.png" referrerpolicy="no-referrer" alt="image-20240223222332598"></p><p><span>一对一   开销大</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222401958.png" referrerpolicy="no-referrer" alt="image-20240223222401958"></p><p><span>多对一    无法实现高并发</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222420081.png" referrerpolicy="no-referrer" alt="image-20240223222420081"></p><p><span>多对多：</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222545003.png" referrerpolicy="no-referrer" alt="image-20240223222545003"></p><h2 id='线程的状态与转换'><span>线程的状态与转换</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223222858400.png" referrerpolicy="no-referrer" alt="image-20240223222858400"></p><h2 id='处理机调度'><span>处理机调度</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223224319585.png" referrerpolicy="no-referrer" alt="image-20240223224319585"></p><h2 id='进程调度的时机切换与过程方式'><span>进程调度的时机、切换与过程、方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223225845768.png" referrerpolicy="no-referrer" alt="image-20240223225845768"></p><h2 id='调度器和闲逛进程'><span>调度器和闲逛进程</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223230259750.png" referrerpolicy="no-referrer" alt="image-20240223230259750"></p><h2 id='调度算法和评价指标'><span>调度算法和评价指标</span></h2><p><span>CPU利用率、系统吞吐量、周转时间、等待时间、响应时间</span></p><p><span>批处理系统</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223231309553.png" referrerpolicy="no-referrer" alt="image-20240223231309553"></p><p><span>交互式系统</span><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223231446033.png" referrerpolicy="no-referrer" alt="image-20240223231446033"></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240223231610305.png" referrerpolicy="no-referrer" alt="image-20240223231610305"></p><h2 id='进程同步和进程互斥'><span>进程同步和进程互斥</span></h2><p><span>进程同步是解决进程并发造成的进程异步问题，使进程按照预知的方向进行</span></p><p><span>临界资源：一个时间段内只允许一个进程使用的资源</span></p><p><span>进程互斥是指当一个进程访问某临界资源时，另一个想要访问该临界资源的进程必须等待。当访问临界资源的进程访问结束，释放该资源之后，另一个进程才能去访问临界资源。</span></p><p><span>进程互斥遵循的原则</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224121857963.png" referrerpolicy="no-referrer" alt="image-20240224121857963"></p><h2 id='进程互斥的软件实现方法'><span>进程互斥的软件实现方法</span></h2><ul><li><p><span>单标志法</span></p></li><li><p><span>双标识先检查</span></p></li><li><p><span>双标志后检查</span></p></li><li><p><span>Peterson算法</span></p></li></ul><h2 id='进程互斥的硬件实现方法'><span>进程互斥的硬件实现方法</span></h2><ul><li><p><span>中断屏蔽法</span></p></li><li><p><span>TestAndSet(TS指令/TSL指令)</span></p></li><li><p><span>Swap指令(XCHG指令)</span></p></li></ul><h2 id='互斥锁'><span>互斥锁</span></h2><p><span>解决临界区最简单的工具就是互斥锁(mutex lock)。</span></p><p><span>一个进程在进入临界区时应获得锁；在退出临界区时释放锁。</span></p><p><span>函数acquire()获得锁，而函数release()释放锁。</span></p><h2 id='信号量机制'><span>信号量机制</span></h2><ul><li><p><span>整型信号量</span></p></li><li><p><span>记录型信号量</span></p></li></ul><p><span>阻塞block()            唤醒wakeup()</span></p><h2 id='用信号量机制实现进程互斥同步前驱关系'><span>用信号量机制实现进程互斥、同步、前驱关系</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224133556069.png" referrerpolicy="no-referrer" alt="image-20240224133556069"></p><h2 id='生产者消费者问题'><span>生产者消费者问题</span></h2><p><span>生产者和消费者共享一个初始为空、大小为n的缓冲区</span></p><p><span>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待</span></p><p><span>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待。</span></p><p><span>缓冲区是临界资源，各进程必须互斥地访问(否则会信息覆盖)</span></p><p><span>实现互斥的P操作一定要在实现同步的P操作之后，否则可能引起&quot;死锁&quot;</span></p><h2 id='多生产者和多消费者问题'><span>多生产者和多消费者问题</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224140649268.png" referrerpolicy="no-referrer" alt="image-20240224140649268"></p><h2 id='吸烟者问题'><span>吸烟者问题</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224141832785.png" referrerpolicy="no-referrer" alt="image-20240224141832785"></p><h2 id='读者写者问题'><span>读者写者问题</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224143322719.png" referrerpolicy="no-referrer" alt="image-20240224143322719"></p><h2 id='哲学家问题'><span>哲学家问题</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224143502481.png" referrerpolicy="no-referrer" alt="image-20240224143502481"></p><h2 id='管程'><span>管程</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224145214906.png" referrerpolicy="no-referrer" alt="image-20240224145214906"></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224145048472.png" referrerpolicy="no-referrer" alt="image-20240224145048472"></p><p><span>将信号量机制封装(信号量机制麻烦，易出错)，向外部提供接口，更方便实现进程互斥和同步。在管程中设置条件变量及等待/唤醒操作已解决同步问题</span></p><h2 id='死锁'><span>死锁</span></h2><p><span>只有必须互斥使用的资源的争抢才会导致死锁</span></p><p><span>在并发环境下，各进程因竞争资源而造成的一种互相等待对方手里的资源，导致各进程都阻塞，都无法向前推进的现象</span></p><p><span>饥饿：由于长时间等不到想要的资源，某进程无法向前推进的现象。比如：在短进程优先(SPF)算法中，若有源源不断的短进程到来，则长进程将一直得不到处理机，从而发生长进程“饥饿”。</span></p><p><span>死锁产生的必要条件</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224151106887.png" referrerpolicy="no-referrer" alt="image-20240224151106887"></p><h2 id='死锁的处理策略'><span>死锁的处理策略</span></h2><ul><li><p><span>预防死锁</span></p><p><span>破坏循坏条件</span></p></li><li><p><span>避免死锁</span></p><p><span>银行家算法</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224195241315.png" referrerpolicy="no-referrer" alt="image-20240224195241315"></p></li><li><p><span>检测与解除</span></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224195408878.png" referrerpolicy="no-referrer" alt="image-20240224195408878"></p></li></ul><h1 id='第三章'><span>第三章</span></h1><h2 id='内存的基础知识'><span>内存的基础知识</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224200632681.png" referrerpolicy="no-referrer" alt="image-20240224200632681"></p><p><span>需要相对寻址</span></p><h2 id='内存管理的概念'><span>内存管理的概念</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224202557757.png" referrerpolicy="no-referrer" alt="image-20240224202557757"></p><h2 id='内存的覆盖与交换'><span>内存的覆盖与交换</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224203301150.png" referrerpolicy="no-referrer" alt="image-20240224203301150"></p><h2 id='连续分配的方式'><span>连续分配的方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224204127108.png" referrerpolicy="no-referrer" alt="image-20240224204127108"></p><h2 id='动态分区基本算法'><span>动态分区基本算法</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224204240790.png" referrerpolicy="no-referrer" alt="image-20240224204240790"></p><h2 id='基本分页存储管理的概念'><span>基本分页存储管理的概念</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224204525373.png" referrerpolicy="no-referrer" alt="image-20240224204525373"></p><h2 id='基本地址变换机构'><span>基本地址变换机构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224204718290.png" referrerpolicy="no-referrer" alt="image-20240224204718290"></p><h2 id='具有快表的地址变换机构'><span>具有快表的地址变换机构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224205107857.png" referrerpolicy="no-referrer" alt="image-20240224205107857"></p><h2 id='两级页表'><span>两级页表</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224205220503.png" referrerpolicy="no-referrer" alt="image-20240224205220503"></p><h2 id='基本分段存储管理方式'><span>基本分段存储管理方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224205411321.png" referrerpolicy="no-referrer" alt="image-20240224205411321"></p><h2 id='段页式管理方式'><span>段页式管理方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224205612848.png" referrerpolicy="no-referrer" alt="image-20240224205612848"></p><h2 id='虚拟内存基本概念'><span>虚拟内存基本概念</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224210628116.png" referrerpolicy="no-referrer" alt="image-20240224210628116"></p><h2 id='请求分页管理方式'><span>请求分页管理方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224211614887.png" referrerpolicy="no-referrer" alt="image-20240224211614887"></p><h2 id='页面置换算法'><span>页面置换算法</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224211813462.png" referrerpolicy="no-referrer" alt="image-20240224211813462"></p><h2 id='页面分配策略'><span>页面分配策略</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224212230567.png" referrerpolicy="no-referrer" alt="image-20240224212230567"></p><h2 id='内存映射文件'><span>内存映射文件</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240224213018005.png" referrerpolicy="no-referrer" alt="image-20240224213018005"></p><h1 id='第四章'><span>第四章</span></h1><h2 id='初始文件管理'><span>初始文件管理</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225170125361.png" referrerpolicy="no-referrer" alt="image-20240225170125361"></p><h2 id='文件的逻辑结构'><span>文件的逻辑结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225170952863.png" referrerpolicy="no-referrer" alt="image-20240225170952863"></p><h2 id='文件目录'><span>文件目录</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225171605420.png" referrerpolicy="no-referrer" alt="image-20240225171605420"></p><h2 id='文件的物理结构'><span>文件的物理结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225171911500.png" referrerpolicy="no-referrer" alt="image-20240225171911500"></p><h2 id='逻辑结构与物理结构'><span>逻辑结构与物理结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225172108996.png" referrerpolicy="no-referrer" alt="image-20240225172108996"></p><h2 id='文件存储空间管理'><span>文件存储空间管理</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225172831018.png" referrerpolicy="no-referrer" alt="image-20240225172831018"></p><h2 id='文件的基本操作'><span>文件的基本操作</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225173326317.png" referrerpolicy="no-referrer" alt="image-20240225173326317"></p><h2 id='文件共享'><span>文件共享</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225173827022.png" referrerpolicy="no-referrer" alt="image-20240225173827022"></p><h2 id='文件保护'><span>文件保护</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225174034949.png" referrerpolicy="no-referrer" alt="image-20240225174034949"></p><h2 id='文件系统的层次结构'><span>文件系统的层次结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225174446487.png" referrerpolicy="no-referrer" alt="image-20240225174446487"></p><h2 id='文件系统的全局结构布局'><span>文件系统的全局结构(布局)</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225175324746.png" referrerpolicy="no-referrer" alt="image-20240225175324746"></p><h2 id='虚拟文件系统'><span>虚拟文件系统 </span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225175959754.png" referrerpolicy="no-referrer" alt="image-20240225175959754"></p><h1 id='第五章'><span>第五章</span></h1><h2 id='设备管理'><span>设备管理</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225180646840.png" referrerpolicy="no-referrer" alt="image-20240225180646840"></p><h2 id='io控制器'><span>I/O控制器</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225181342231.png" referrerpolicy="no-referrer" alt="image-20240225181342231"></p><h2 id='io控制方式'><span>I/O控制方式</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225182018871.png" referrerpolicy="no-referrer" alt="image-20240225182018871"></p><h2 id='io软件层次结构'><span>I/O软件层次结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225182349472.png" referrerpolicy="no-referrer" alt="image-20240225182349472"></p><h2 id='输入输出应用程序接口设备驱动程序接口'><span>输入/输出应用程序接口&amp;设备驱动程序接口</span></h2><p><span> </span><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225184817339.png" referrerpolicy="no-referrer" alt="image-20240225184817339"><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225184757852.png" referrerpolicy="no-referrer" alt="image-20240225184757852"></p><h2 id='io核心子系统'><span>I/O核心子系统</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225185032384.png" referrerpolicy="no-referrer" alt="image-20240225185032384"></p><h2 id='假脱机技术spooling技术'><span>假脱机技术SPOOLing技术</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225185507273.png" referrerpolicy="no-referrer" alt="image-20240225185507273"></p><h2 id='设备的分配与回收'><span>设备的分配与回收</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225185851393.png" referrerpolicy="no-referrer" alt="image-20240225185851393"></p><h2 id='缓冲区管理'><span>缓冲区管理</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225190402135.png" referrerpolicy="no-referrer" alt="image-20240225190402135"></p><h2 id='磁盘的结构'><span>磁盘的结构</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225190540574.png" referrerpolicy="no-referrer" alt="image-20240225190540574"></p><h2 id='磁盘调度算法'><span>磁盘调度算法</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225190643478.png" referrerpolicy="no-referrer" alt="image-20240225190643478"></p><h2 id='减少磁盘延迟时间的方法'><span>减少磁盘延迟时间的方法</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225190903818.png" referrerpolicy="no-referrer" alt="image-20240225190903818"></p><h2 id='磁盘的管理'><span>磁盘的管理</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225191104628.png" referrerpolicy="no-referrer" alt="image-20240225191104628"></p><h2 id='固态硬盘ssd'><span>固态硬盘SSD</span></h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20240225191210874.png" referrerpolicy="no-referrer" alt="image-20240225191210874"></p><p><span>完结撒花</span>💮</p></div></div>
+</body>
+</html>
